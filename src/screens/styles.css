@@ -1,0 +1,28 @@
+.calculatorCont {
+  background-color: #282c34;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputCont {
+  background-color: antiquewhite;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.inputBox {
+  height: 40px;
+  width: 200px;
+  border-radius: 15px;
+  align-self: center;
+  margin-bottom: 5px;
+}
+
+.loginBtn {
+  margin-top: 10px;
+}
