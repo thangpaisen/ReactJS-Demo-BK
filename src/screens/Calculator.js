@@ -1,6 +1,6 @@
 import '../App.css';
 import { useEffect, useState } from 'react';
-
+import {useLocation} from 'react-router-dom';
 export default function Calculator() {
     const [results, setResults] = useState('')
     const [ketQua, setKetQua] = useState()

@@ -14,7 +14,7 @@ export default function Home() {
   
     function timer() {
       let timeLeft = newYear.getTime() - Date.now();
-      console.log(timeLeft);
+      // console.log(timeLeft);
       // let time = new Date(timeLeft - 1000);
       setCurTime(new Date(timeLeft))
     }

@@ -9,41 +9,39 @@ import {
 import Home from './screens/Home';
 import Calculator from './screens/Calculator';
 import LoginForm from './screens/LoginForm';
+import Detail from "./screens/Detail";
+import ResponsiveAppBar from "./components/ResponsiveAppBar";
+import Customers from "./screens/Customers";
 
 function App() {
-
+  const [userInfo, setUserInfo] = useState(() => {
+    let userInfo = localStorage.getItem("UserInfo");
+    if (userInfo) {
+      return JSON.parse(userInfo);
+    }
+    return null;
+  });
   return (
+    <>
+    {userInfo?
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Login</Link>
-            </li>
-            <li>
-              <Link to="/calculator">Calculator</Link>
-            </li>
-            <li>
-              <Link to="/countdown">Count Down 2022</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Routes> and
-            renders the first one that matches the current URL. */}
+        <ResponsiveAppBar/>
         <Switch>
-          <Route path="/calculator">
-            <Calculator />
+          <Route path="/customers/:id">
+            <Detail />
           </Route>
-          <Route path="/countdown">
+          <Route path="/customers">
+            <Customers />
+          </Route>
+          <Route exact path="/">
             <Home />
-          </Route>
-          <Route path="/">
-            <LoginForm />
           </Route>
         </Switch>
       </div>
     </Router>
+    :<LoginForm />}
+    </>
   );
 }
 
